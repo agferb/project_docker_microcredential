@@ -1,12 +1,19 @@
-FROM <base imagae>
+# Import base image
+FROM python:3.9-slim
 
-# TODO: Set a working directory
+# Set a working directory and running folders
+WORKDIR /app
+RUN mkdir ./models
 
-# TODO: Copy the requirements.txt file to the working directory
+# Copy requirements.txt and train.py to the working directory
+COPY requirements.txt .
+COPY train.py .
 
-# TODO: Install the Python dependencies
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# TODO: Copy the training script (train.py) to the working directory
+# Run the training script that generates the model
+CMD ["python", "train.py"]
 
-# TODO: Run the training script that generates the model
-CMD [...]
+# To run the container:
+# docker run --rm -w /app -v ./your/path/to/save/the/model:/app/models <ml_train:version>
