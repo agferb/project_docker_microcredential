@@ -24,9 +24,11 @@ date
 # Build image
 APPTAINER_CACHEDIR=/tmp/ \
 APPTAINER_TMPDIR=/tmp/ \
-PROOT_NO_SECCOMP=1 \
+
 apptainer build --fakeroot /tmp/$USER/ml-train_01.00.sif \
 docker://aleitocu/ml_train:01.00
+
+mv /tmp/$USER/ml-train_01.00.sif $VSC_SCRATCH/project_docker_microcredential
 
 # Sleep after built
 #echo "Image built, going to sleep for 30 seconds"
@@ -37,7 +39,6 @@ docker://aleitocu/ml_train:01.00
 #echo "Container runned"
 
 # Finish
-#mv /tmp/$USER/ml-train_01.00.sif $VSC_SCRATCH
 date
 echo End Job
 
