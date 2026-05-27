@@ -35,3 +35,8 @@ docker image push aleitocu/ml_train:01.00
 ```bash
 docker image push aleitocu/ml_infer:01.00
 ```
+9. The current repository updates were added, commites and pushed back to GitHub
+10. Inside UGent HPC, I cloned the current repository
+```bash
+git clone git@github.com:agferb/project_docker_microcredential.git
+```

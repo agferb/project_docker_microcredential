@@ -24,6 +24,7 @@ date
 # Build image
 APPTAINER_CACHEDIR=/tmp/ \
 APPTAINER_TMPDIR=/tmp/ \
+PROOT_NO_SECCOMP=1 \
 apptainer build --fakeroot /tmp/$USER/ml-train_01.00.sif \
 docker://aleitocu/ml_train:01.00
 
