@@ -6,7 +6,6 @@
 #SBATCH --mem=16GB
 #SBATCH --output=pull-from-docker.%j.stdout
 #SBATCH --error=pull-from-docker.%j.stderr
-#SBATCH --reservation=vibrepdata_3
 ###SBATCH complete missing info
 
 # eventually load other modules
