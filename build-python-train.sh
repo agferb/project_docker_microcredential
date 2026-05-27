@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --time=1:00:00
 #SBATCH --mem=16GB
-#SBATCH --output=pull-from-docker.%j.stdout
-#SBATCH --error=pull-from-docker.%j.stderr
+#SBATCH --output=python-ml-train.%j.stdout
+#SBATCH --error=python-ml-train.%j.stderr
 ###SBATCH complete missing info
 
 # eventually load other modules
@@ -27,16 +27,16 @@ APPTAINER_TMPDIR=/tmp/ \
 apptainer build --fakeroot /tmp/$USER/ml-train_01.00.sif \
 docker://aleitocu/ml_train:01.00
 
-mv /tmp/$USER/ml-train_01.00.sif $VSC_SCRATCH
-
 # Sleep after built
-echo "Image built, going to sleep for 1 minute"
-sleep 60
+#echo "Image built, going to sleep for 30 seconds"
+#sleep 30
 
 # Run image
-apptainer run ml-train_01.00.sif
+#apptainer run ml-train_01.00.sif
+#echo "Container runned"
 
 # Finish
+#mv /tmp/$USER/ml-train_01.00.sif $VSC_SCRATCH
 date
 echo End Job
 
