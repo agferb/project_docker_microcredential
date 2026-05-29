@@ -1,0 +1,19 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) env/vsc/doduo     3) env/software/doduo
+  2) env/slurm/doduo   4) cluster/doduo
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+INFO:    Inserting Apptainer configuration...
+INFO:    Creating SIF file...
+FATAL:   While performing build: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: proot error: ptrace(TRACEME): Operation not permitted
+proot error: execve("/usr/libexec/apptainer/bin/mksquashfs"): Operation not permitted
+proot info: possible causes:
+  * the program is a script but its interpreter (eg. /bin/sh) was not found;
+  * the program is an ELF but its interpreter (eg. ld-linux.so) was not found;
+  * the program is a foreign binary but qemu was not specified;
+  * qemu does not work correctly (if specified);
+  * the loader was not found or doesn't work.
+fatal error: see `proot --help`.
