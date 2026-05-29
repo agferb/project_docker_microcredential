@@ -16,7 +16,7 @@ echo Start Job
 date
 
 # Run image
-apptainer ml-train_01.00.sif
+apptainer run ml-train_01.00.sif
 echo "Container runned"
 
 # Finish
